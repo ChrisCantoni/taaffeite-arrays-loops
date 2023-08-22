@@ -41,7 +41,23 @@ console.table(colors);
 // LOOPS
 // 'for of' loop. Loops over each item in an array
 // and assigns it the value to 'item'.
+
+// document.querySelector is how you are importing things
+// from javascript to your page/html
+let colorList = document.querySelector('#color-list');
 for (let item of colors) {
     console.log('color', item);
+    colorList.innerHTML += '<div>' + item + '</div>';
 }
 
+// Traditional for loop
+let temperatureValues = [72, 84, 93, 102];
+// Traditional for loop does start, end, and increment
+for (let index = 0; index < 4; index += 1) {
+    console.log(index)
+}
+
+for (let i = 0; i < temperatureValues.length; i++) {
+    let temp = temperatureValues[i];
+    console.log('temp:', temp);
+}

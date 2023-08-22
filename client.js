@@ -61,3 +61,54 @@ for (let i = 0; i < temperatureValues.length; i++) {
     let temp = temperatureValues[i];
     console.log('temp:', temp);
 }
+
+// While loops (least common type of loop)
+//start
+let start = 0;
+//       end
+while (start < 10) {
+    console.log(start);
+    start++; // increment
+}
+// 'for of' loop
+for (let temp of temperatureValues) {
+    console.log(temp);
+}
+
+// Data you are provided: A list of all item values (cost of items)
+// Expected output: Total value of all items. Indication of whether
+// the fundraising goal was met (log).
+
+// What we'll need to do: Array of all items. 
+// Add up all the items in the array by using a loop, I would think.
+// Compare total of items to fundraising goal
+// Log difference between goal and total number of items.
+
+let itemList= [100, 500, 2000, 50, 1000, 750, 1000];
+let currentTotal = 0;
+const fundraisingGoal = 20000;
+let goalReached = false;
+
+for (let item of itemList) {
+    console.log('for loop', item, currentTotal);
+    currentTotal += item;
+}
+console.log('Final total:', currentTotal);
+
+if (fundraisingGoal <= currentTotal) {
+    goalReached = true;
+    console.log('You did it!')
+} else if (fundraisingGoal > currentTotal) {
+    console.log("You didn't raise enough money :(");
+}
+
+console.log('Goal reached:', goalReached);
+
+
+let outputDiv = document.querySelector('#output');
+if (goalReached) {
+outputDiv.innerHTML = 'Goal reached!!!'
+
+} else {
+    outputDiv.innerHTML = 'Goal not yet reached :(. Remaining amount: $' + (fundraisingGoal - currentTotal);
+}
